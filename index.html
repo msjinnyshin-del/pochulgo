@@ -84,11 +84,18 @@
   .maplink-ico { margin-left: 5px; font-size: 11px; color: #9c9890; }
   .maplink:active { opacity: .6; }
 
-  .credits { margin-top: 14px; font: 400 12.5px/2 'Noto Sans KR', sans-serif; color: #5b5952; }
-  .credits div + div { margin-top: 4px; }
-  .clink { color: #16151a; border-bottom: 1px solid rgba(0,0,0,.28); padding-bottom: 1px; }
-  .clink::after { content: '↗'; margin-left: 4px; font-size: 9.5px; color: #9c9890; }
-  .clink:active { opacity: .6; }
+  /* 연사 이력 — 각 항목을 누를 수 있는 칩으로 */
+  .credits { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 13px; border-radius: 99px;
+    background: #fbfaf8; border: 1px solid rgba(0,0,0,.16);
+    font: 500 12.5px/1 'Noto Sans KR', sans-serif; color: #16151a;
+    white-space: nowrap;
+  }
+  .chip-ico { font-size: 11px; color: oklch(0.52 0.14 25); }
+  .chip::after { content: '↗'; font-size: 10px; color: #a5a199; }
+  .chip:active { background: #f0ede6; }
 
   .talk { display: flex; gap: 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(0,0,0,.08); }
   .talk:last-child { padding-bottom: 0; border-bottom: 0; }
@@ -155,8 +162,10 @@
           </div>
         </div>
         <div class="credits">
-          <div>저서 <a class="clink" href="https://lnkd.in/gVR7dpm7" target="_blank" rel="noopener">『AI 전환 절대 공식』</a> · <a class="clink" href="https://product.kyobobook.co.kr/detail/S000220465258" target="_blank" rel="noopener">『룰셋』</a></div>
-          <div><a class="clink" href="https://lnkd.in/gzysWYvj" target="_blank" rel="noopener">YouTube 「AI 전환 공식 김건우」</a> · <a class="clink" href="https://lnkd.in/gh_CRHHu" target="_blank" rel="noopener">LinkedIn</a></div>
+          <a class="chip" href="https://lnkd.in/gVR7dpm7" target="_blank" rel="noopener"><span class="chip-ico">📘</span>AI 전환 절대 공식</a>
+          <a class="chip" href="https://product.kyobobook.co.kr/detail/S000220465258" target="_blank" rel="noopener"><span class="chip-ico">📘</span>룰셋</a>
+          <a class="chip" href="https://lnkd.in/gzysWYvj" target="_blank" rel="noopener"><span class="chip-ico">▶</span>YouTube</a>
+          <a class="chip" href="https://lnkd.in/gh_CRHHu" target="_blank" rel="noopener"><span class="chip-ico">in</span>LinkedIn</a>
         </div>
       </div>
     </div>
