@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI 공유회 — 각자의 현장에서 AI를 쓰는 사람들의 이야기</title>
+<meta name="description" content="여섯 명의 연사가 실제로 써온 방식을 그대로 꺼내놓습니다. 8월 17일(월) 신논현 앙트레블. 강의형 경험 공유, 회비 3만 원.">
+<meta name="theme-color" content="#fbfaf8">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 공유회 — 각자의 현장에서 AI를 쓰는 사람들의 이야기">
+<meta property="og:description" content="여섯 명의 연사가 실제로 써온 방식을 그대로 꺼내놓습니다. 8월 17일(월) 신논현 앙트레블 · 회비 3만 원.">
+<meta property="og:image" content="assets/og.png">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@300;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: #e9e7e2;
+    font-family: 'Noto Sans KR', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; }
+
+  /* 모바일은 100% 폭, 데스크톱에서는 480px 카드로 중앙 정렬 */
+  .page {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    background: #f7f5f1;
+    min-height: 100vh;
+  }
+  @media (min-width: 520px) {
+    body { padding: 32px 0; background: #e9e7e2; }
+    .page { min-height: 0; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.13); }
+  }
+
+  .sec { padding: 40px 28px; border-bottom: 1px solid rgba(0,0,0,.09); }
+  .eyebrow {
+    font: 500 11px/1 'IBM Plex Mono', monospace;
+    letter-spacing: .12em;
+    color: oklch(0.52 0.14 25);
+  }
+  .h2 { margin: 12px 0 20px; font: 900 24px/1.4 'Noto Serif KR', serif; color: #16151a; }
+
+  .cta {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 17px; border-radius: 8px;
+    background: #16151a; color: #fbfaf8;
+    font: 700 16px/1 'Noto Sans KR', sans-serif;
+  }
+  .cta-ghost {
+    display: flex; align-items: center; justify-content: center;
+    padding: 15px; border-radius: 8px;
+    border: 1px solid #16151a; color: #16151a;
+    font: 500 14px/1 'Noto Sans KR', sans-serif;
+  }
+  .cta:active, .cta-ghost:active { opacity: .82; }
+
+  /* 이미지가 아직 없을 때 깨진 아이콘 대신 보이는 자리표시 */
+  .ph {
+    display: flex; align-items: center; justify-content: center;
+    background: #efece6;
+    font: 500 12px/1.6 'IBM Plex Mono', monospace;
+    color: #a5a199;
+    text-align: center;
+  }
+  .ph-banner { aspect-ratio: 4 / 1; border-bottom: 1px solid rgba(0,0,0,.08); }
+  .ph-face { width: 46px; height: 46px; border-radius: 99px; flex: none; font-size: 10px; }
+
+  .meta-row { display: flex; padding: 13px 0; border-bottom: 1px solid rgba(0,0,0,.07); }
+  .meta-key { width: 74px; flex: none; font: 500 12px/1.6 'IBM Plex Mono', monospace; color: #9c9890; }
+  .meta-val { font: 500 14px/1.6 'Noto Sans KR', sans-serif; color: #16151a; }
+
+  .talk { display: flex; gap: 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(0,0,0,.08); }
+  .talk:last-child { padding-bottom: 0; border-bottom: 0; }
+  .talk-no {
+    width: 26px; height: 26px; flex: none;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 99px; background: #16151a;
+    font: 600 11px/1 'IBM Plex Mono', monospace; color: #fbfaf8;
+  }
+  .talk-title { font: 500 15px/1.55 'Noto Sans KR', sans-serif; color: #16151a; text-wrap: pretty; }
+  .talk-by { margin-top: 5px; font: 400 12px/1 'Noto Sans KR', sans-serif; color: #8b887f; }
+
+  .perk { padding: 20px; background: #fbfaf8; border: 1px solid rgba(0,0,0,.09); border-radius: 4px; }
+  .perk-no { font: 900 30px/1 'Noto Serif KR', serif; color: oklch(0.52 0.14 25); }
+  .perk-title { margin-top: 10px; font: 700 17px/1.4 'Noto Sans KR', sans-serif; color: #16151a; }
+  .perk-body { margin-top: 8px; font: 400 13.5px/1.8 'Noto Sans KR', sans-serif; color: #5b5952; }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <!-- 히어로 -->
+  <section class="sec" style="padding:52px 28px 40px;background:#fbfaf8">
+    <div class="eyebrow" style="display:flex;align-items:center;gap:8px;letter-spacing:.1em">
+      AI SHARING SESSION
+      <span style="flex:1;height:1px;background:rgba(0,0,0,.14)"></span>
+      VOL.01
+    </div>
+    <h1 style="margin:24px 0 0;font:900 38px/1.3 'Noto Serif KR',serif;color:#16151a;letter-spacing:-0.02em;text-wrap:pretty">
+      각자의 현장에서<br>AI를 쓰는<br><span style="color:oklch(0.52 0.14 25)">사람들의 이야기</span>
+    </h1>
+    <p style="margin:20px 0 0;font:400 15px/1.8 'Noto Sans KR',sans-serif;color:#5b5952">
+      여섯 명의 연사가 실제로 써온 방식을 그대로 꺼내놓습니다. 실습 없이, 이야기로.
+    </p>
+
+    <div style="margin:28px 0 0;border-top:1px solid rgba(0,0,0,.12)">
+      <div class="meta-row"><span class="meta-key">일시</span><span class="meta-val">2025년 8월 17일(월) · 임시공휴일</span></div>
+      <div class="meta-row"><span class="meta-key">장소</span><span class="meta-val">신논현 앙트레블</span></div>
+      <div class="meta-row"><span class="meta-key">형식</span><span class="meta-val">강의형 경험 공유 (실습 없음)</span></div>
+      <div class="meta-row"><span class="meta-key">회비</span><span class="meta-val">3만 원</span></div>
+    </div>
+
+    <a class="cta" style="margin-top:22px" href="https://forms.gle/f6nq8THHL8sFcgTc7">신청하기 <span style="font-size:14px">→</span></a>
+  </section>
+
+  <!-- 특별 초빙 연사 -->
+  <section class="sec" style="background:#f7f5f1">
+    <div class="eyebrow">특별 초빙 연사</div>
+    <div style="margin:18px 0 0;background:#fbfaf8;border:1px solid rgba(0,0,0,.1);border-radius:4px;overflow:hidden">
+      <img src="assets/keynote-banner.png" alt="김건우 — AX PLAYBOOK"
+           style="width:100%;display:block;border-bottom:1px solid rgba(0,0,0,.08)"
+           onerror="this.outerHTML='&lt;div class=\'ph ph-banner\'&gt;assets/keynote-banner.png&lt;/div&gt;'">
+      <div style="padding:20px">
+        <div style="font:900 21px/1.45 'Noto Serif KR',serif;color:#16151a;text-wrap:pretty">
+          AI 시대, AX는 선택이 아닌 생존 전략이다
+        </div>
+        <div style="display:flex;align-items:center;gap:11px;margin:16px 0 0;padding-top:15px;border-top:1px solid rgba(0,0,0,.09)">
+          <img src="assets/speaker-kimgunwoo.png" alt="김건우"
+               style="width:46px;height:46px;border-radius:99px;object-fit:cover;flex:none"
+               onerror="this.outerHTML='&lt;div class=\'ph ph-face\'&gt;photo&lt;/div&gt;'">
+          <div>
+            <div style="font:700 15px/1.3 'Noto Sans KR',sans-serif;color:#16151a">김건우</div>
+            <div style="margin-top:3px;font:400 12px/1.5 'Noto Sans KR',sans-serif;color:#7a776f">KT AX 전략 컨설턴트 · 겸임교수</div>
+          </div>
+        </div>
+        <div style="margin-top:14px;font:400 12.5px/1.9 'Noto Sans KR',sans-serif;color:#5b5952">
+          저서 『AI 전환 절대 공식』 · 『룰셋』<br>YouTube 「AI 전환 공식 김건우」 · LinkedIn 4.5K+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 멤버 연사 -->
+  <section class="sec" style="background:#fbfaf8">
+    <div class="eyebrow">멤버 연사</div>
+    <h2 class="h2">다섯 개의 현장</h2>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="talk"><span class="talk-no">02</span><div><div class="talk-title">AI로 비용 없이 글을 쓰고 출판하는 방법</div><div class="talk-by">안성용 · 6기</div></div></div>
+      <div class="talk"><span class="talk-no">03</span><div><div class="talk-title">AI 기반 마케팅 자동화 OS 구축 사례</div><div class="talk-by">이동영 · 8기</div></div></div>
+      <div class="talk"><span class="talk-no">04</span><div><div class="talk-title">Perplexity 등 AI 도구를 활용한 논문 작성</div><div class="talk-by">심어진 · 12기</div></div></div>
+      <div class="talk"><span class="talk-no">05</span><div><div class="talk-title">AI 시대에 반드시 알아야 할 안전과 윤리</div><div class="talk-by">강익선 · 13기</div></div></div>
+      <div class="talk"><span class="talk-no">06</span><div><div class="talk-title">55세 은퇴 기획자, AI로 전환하다</div><div class="talk-by">신진영 · 8기</div></div></div>
+    </div>
+    <a class="cta-ghost" style="margin-top:24px" href="https://forms.gle/f6nq8THHL8sFcgTc7">자리 신청하기 →</a>
+  </section>
+
+  <!-- 이번 한정 혜택 -->
+  <section class="sec" style="background:#f0ede6;border-bottom:0">
+    <div class="eyebrow">이번 공유회 한정</div>
+    <h2 class="h2">이번에만 있는 세 가지</h2>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="perk">
+        <div class="perk-no">①</div>
+        <div class="perk-title">AI 전용 채팅방 입장권</div>
+        <div class="perk-body">참석자에게만 열립니다. 최신 정보와 활용 팁이 한곳에 모이고, 공유회가 끝나도 계속됩니다.</div>
+      </div>
+      <div class="perk">
+        <div class="perk-no">②</div>
+        <div class="perk-title">가족 회비 면제</div>
+        <div class="perk-body">자녀와 함께 오셔도 됩니다. 자녀 회비는 받지 않습니다. 세대를 넘어 같이 듣기 좋은 자리예요.</div>
+      </div>
+      <div class="perk" style="background:#16151a;border-color:#16151a">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div class="perk-no" style="color:oklch(0.72 0.14 25)">③</div>
+          <span style="padding:5px 9px;border-radius:99px;background:oklch(0.62 0.15 25);font:600 10px/1 'Noto Sans KR',sans-serif;color:#fff">참석자 전용</span>
+        </div>
+        <div class="perk-title" style="color:#fbfaf8">클로드 실습 세미나 초대</div>
+        <div class="perk-body" style="color:rgba(255,255,255,.66)">들은 걸 직접 손으로 해보는 실습형 세미나 1회. 참석자가 아니면 신청 자체가 불가합니다.</div>
+      </div>
+    </div>
+
+    <a class="cta" style="margin-top:26px;padding:18px" href="https://forms.gle/f6nq8THHL8sFcgTc7">지금 신청하기 <span style="font-size:14px">→</span></a>
+    <div style="margin-top:12px;text-align:center;font:400 11.5px/1.6 'IBM Plex Mono',monospace;color:#9c9890">forms.gle/f6nq8THHL8sFcgTc7</div>
+  </section>
+
+</main>
+</body>
+</html>
