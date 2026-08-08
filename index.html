@@ -97,6 +97,23 @@
   .chip::after { content: '↗'; font-size: 10px; color: #a5a199; }
   .chip:active { background: #f0ede6; }
 
+  /* 현장 사인본 증정 안내 */
+  .gift {
+    margin-top: 18px; padding: 15px 16px; border-radius: 6px;
+    background: #fbf3f1; border: 1px solid oklch(0.52 0.14 25 / 0.22);
+  }
+  .gift-hd {
+    display: flex; align-items: center; gap: 7px;
+    font: 700 13px/1 'Noto Sans KR', sans-serif; color: oklch(0.46 0.14 25);
+  }
+  .gift-item {
+    display: flex; align-items: baseline; gap: 8px;
+    margin-top: 10px; padding-top: 10px;
+    border-top: 1px solid oklch(0.52 0.14 25 / 0.15);
+    font: 400 13.5px/1.5 'Noto Sans KR', sans-serif; color: #5b5952;
+  }
+  .gift-item b { margin-left: auto; font: 700 13.5px/1.5 'Noto Sans KR', sans-serif; color: #16151a; white-space: nowrap; }
+
   .talk { display: flex; gap: 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(0,0,0,.08); }
   .talk:last-child { padding-bottom: 0; border-bottom: 0; }
   .talk-no {
@@ -166,6 +183,12 @@
           <a class="chip" href="https://product.kyobobook.co.kr/detail/S000220465258" target="_blank" rel="noopener"><span class="chip-ico">📘</span>룰셋</a>
           <a class="chip" href="https://lnkd.in/gzysWYvj" target="_blank" rel="noopener"><span class="chip-ico">▶</span>YouTube</a>
           <a class="chip" href="https://lnkd.in/gh_CRHHu" target="_blank" rel="noopener"><span class="chip-ico">in</span>LinkedIn</a>
+        </div>
+
+        <div class="gift">
+          <div class="gift-hd"><span aria-hidden="true">🎁</span>현장에서 친필 사인본 증정</div>
+          <div class="gift-item"><span>『AI 전환 절대 공식』</span><b>5권</b></div>
+          <div class="gift-item"><span>『룰셋』</span><b>5권</b></div>
         </div>
       </div>
     </div>
